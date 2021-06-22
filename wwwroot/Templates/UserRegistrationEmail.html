@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <Merge Conflict>
+        <link href="~/css/LoginStyle.css" rel="stylesheet" />
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <title>You can log in to PATSI</title>
+</head>
+<body style="background-color:  whitesmoke">
+    <div class="container">
+        
+       
+            <img src="~/images/PATSI-temp.jpg" class="PATSI-logo" alt="PATSI logo">
+            <img src="~/images/tvl-temp.jpg" class="TVL-logo" alt="TVL logo">
+            <div class="login-header">
+                <h2>You can log in to PATSI</h2>
+            </div>
+            <div><p>Hello {0}</p></div>
+            <div class="login-indent spacing">
+                <p>Your access to PATSI has been granted.You can log in using your email address and the temporary password below</p>
+                <p><b>Your temporary password :</b>{1}</p>
+            </div>
+            <div>
+                <form action={2} method="get" target="_blank">
+                    <button type="submit" class="btn-primary" tabindex="3">Go to PATSI</button>
+                </form>
+            </div>
+            <div class="login-indent spacing">
+                <p> Please do not reply to this email as it is sent from an unmonitored email address.</p>
+            </div>
+            <div>
+                <p> Kind regards,</p><p>PATSI Team</p>
+            </div>
+        
+        <!--Form End-->
+    </div>
+    <script src="./lib/jquery/jquery-3.6.0.min.js"></script>
+    <script src="./lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/js/Login.js" asp-append-version="true"></script>
+
+</body>
+</html>

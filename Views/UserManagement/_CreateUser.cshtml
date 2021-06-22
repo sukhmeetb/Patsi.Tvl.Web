@@ -1,0 +1,73 @@
+﻿@using Tvl.Models.UserRegistration;
+@model UserRegistrationInputModel
+@{
+    ViewData["Title"] = "CreateUser";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="~/css/NewUser.css" rel="stylesheet" />
+    <Merge Conflict>
+        <title>TVL Login Screen</title>
+
+</head>
+<body>
+
+    <div class="container" id="CreateUserContainer">
+
+        <form method="post" asp-action="RegisterUser" asp-controller="UserManagement">
+            <div class="heading">Create New User</div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" id="UserName"><b>User name</b></label>
+                <div class="col-sm-10 in">
+                    <input type="text" asp-for="@Model.Username" class="form-control CreateUsertext" id="CreateNewUser_UserName" placeholder="<UserName>">
+                    <span asp-validation-for="Username" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" id="EmailAddress"><b>Email address</b></label>
+                <div class="col-sm-10 in">
+                    <input type="email" asp-for="@Model.EmailAddress" class="form-control CreateUsertext" id="CreateNewUser_EmailAddress" placeholder="<UserEmail>">
+                    <span asp-validation-for="EmailAddress" class="text-danger"></span>
+                    <div class="text-danger">@ViewBag.EmailMessage</div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" id="UserGroup"><b> User group</b></label>
+                <div class="col-sm-10 in">
+                    <select asp-for="@Model.UserGroupId" style="width:auto;"
+                            class="form-control"
+                            asp-items="@(new SelectList(ViewBag.UserGroupList,"UserGroupId", "UserGroupName","<UserGroup>"))">
+                        <option value="">&#60;UserGroup&#62;</option>
+                    </select>
+                    @Html.ValidationMessageFor(model => model.UserGroupId, "", new { @class = "text-danger" })
+                </div>
+
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" id="EnableUser"> <b>Enable user</b></label>
+                <div class="form-check col-sm-10">
+                    <input class="checkbox" type="checkbox" asp-for="@Model.IsEnableUser" id="CreateNewUser_EnableUser" value="true" aria-label="...">
+                </div>
+            </div>
+            <hr size="3">
+            <button class="btn secondary-button" type="submit" data-toggle="#savePopup" data-target="#savePopup">Save</button>
+            <button type="button" class="btn secondary-button" onclick="location.href='@Url.Action("UserManagement", "UserManagement")'">Cancel</button>
+
+        </form>
+
+
+
+    </div>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+
+</body>
+</html>

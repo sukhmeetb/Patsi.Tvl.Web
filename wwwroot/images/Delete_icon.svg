@@ -1,0 +1,43 @@
+<svg id="Icon:_Delete" data-name="Icon: Delete" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-1, .cls-3 {
+        stroke: #004b6d;
+      }
+
+      .cls-2, .cls-3, .cls-5 {
+        fill: none;
+      }
+
+      .cls-4, .cls-6 {
+        stroke: none;
+      }
+
+      .cls-6 {
+        fill: #004b6d;
+      }
+    </style>
+  </defs>
+  <g id="Ellipse_10" data-name="Ellipse 10" class="cls-1">
+    <circle class="cls-4" cx="16" cy="16" r="16"/>
+    <circle class="cls-5" cx="16" cy="16" r="15.5"/>
+  </g>
+  <g id="Group_6391" data-name="Group 6391">
+    <g id="Path_5" data-name="Path 5" class="cls-2" transform="translate(878 -235)">
+      <path class="cls-4" d="M-866,260h8l4-12h-16Z"/>
+      <path class="cls-6" d="M -858.7207641601562 259 L -855.387451171875 249 L -868.612548828125 249 L -865.2792358398438 259 L -858.7207641601562 259 M -858 260 L -866 260 L -870 248 L -854 248 L -858 260 Z"/>
+    </g>
+    <line id="Line_18" data-name="Line 18" class="cls-3" x2="2" y2="8" transform="translate(12 15)"/>
+    <line id="Line_19" data-name="Line 19" class="cls-3" y2="8" transform="translate(16 15)"/>
+    <line id="Line_20" data-name="Line 20" class="cls-3" x1="2" y2="8" transform="translate(18 15)"/>
+  </g>
+  <g id="Path_6" data-name="Path 6" class="cls-2" transform="translate(878 -236)">
+    <path class="cls-4" d="M-870,248l4-4h8l4,4Z"/>
+    <path class="cls-6" d="M -856.4142456054688 247 L -858.4142456054688 245 L -865.5857543945312 245 L -867.5857543945312 247 L -856.4142456054688 247 M -854 248 L -870 248 L -866 244 L -858 244 L -854 248 Z"/>
+  </g>
+  <line id="Line_21" data-name="Line 21" class="cls-3" y2="1" transform="translate(16 7)"/>
+</svg>

@@ -1,0 +1,102 @@
+﻿@using Tvl.Models.UserRegistration
+@model UserListViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="~/css/ManageUserAccStyle.css" />
+    <script type="text/javascript">
+        var flagstr = '@ViewData["flag"]';
+    </script>
+</head>
+<body onload="showModal()">
+<div class="container" id="containerForPagination">
+    <button class="butn btn-primary" onclick="location.href='@Url.Action("CreateUser", "UserManagement")'">Create new user</button>
+            <div class="form-group">
+                <h3>Manage user accounts</h3>
+
+            </div>
+            <div class="form-group">
+                <label class="search">
+                    <input type="search" class="form-control "  id="searchBox" placeholder="&#x1F50E;&#xFE0E; Search users">
+                </label>
+                <button class="form-control butn btn-normal">Clear filters</button>
+            </div>
+
+            <table class="myTable table hover">
+                <thead class="headerRow">
+                    <tr>
+                        <th scope="col">
+                            User name  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-funnel-fill" viewBox="0 0 16 16">
+                                <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2z" />
+                            </svg>
+                        </th>
+                        <th scope="col">
+                            Email address  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-funnel-fill" viewBox="0 0 16 16">
+                                <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2z" />
+                            </svg>
+                        </th>
+                        <th scope="col">
+                            User group  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-funnel-fill" viewBox="0 0 16 16">
+                                <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2z" />
+                            </svg>
+                        </th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var users in Model.UserList)
+                    {
+                        <tr class="dataRow">
+                            <td id="UserName" data-username="@users.UserName">@users.UserName</td>
+                            <td id="Email" data-mail="@users.Email">@users.Email</td>
+                            <td>@users.UserGroup.UserGroupName</td>
+                            <td class="same">
+                                <button class="btn-normal">Disable user</button>
+                                <img src="~/images/Edit_icon.svg" class="Edit-icon" alt="Edit icon"/>
+                                <img src="~/images/Delete_icon.svg" class="Delete-icon" alt="Del icon"/>
+                            </td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        <hr />
+</div>
+
+
+
+            <div class="modalwrap">
+                <div class="modal" id="savePopup" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content"  style="background-color: #004b6d;">
+                            <div class="modal-body" id="modalbody" style="background-color:#004b6d;color:#FFFFFF;">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <div id="Creationpopup">
+                                    New user has been created
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+                <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+</body>
+</html>

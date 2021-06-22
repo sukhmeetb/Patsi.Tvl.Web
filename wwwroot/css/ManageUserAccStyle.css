@@ -1,0 +1,120 @@
+﻿* {
+    font-family: Verdana;
+}
+
+.btn-primary {
+    background-color: #bdd01c;
+    color: #1E1E1E;
+    height: 40px;
+    width: auto;
+    padding: 0 12px;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+    .btn-primary:hover {
+        background-color: #004b6d;
+        color: white;
+    }
+
+.btn-normal {
+    height: 40px;
+    width: auto;
+    padding: 0 12px;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 400;
+    background-color: White;
+    border: 1px solid #004b6d;
+    color: #004b6d;
+}
+
+    .btn-normal:hover {
+        background-color: #004b6d;
+        color: White;
+    }
+
+.headerRow {
+    height: 32px;
+    background-color: #edeff0;
+    font-size: 15pt;
+    font-weight: 400;
+}
+
+.dataRow {
+    height: 48px;
+    background-color: white;
+    border-top: 2px solid #edeff0;
+    border-bottom: 1px solid #adbfc3;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+label {
+    float: left;
+    text-align: left;
+}
+
+.butn {
+    width: fit-content;
+    float: right;
+}
+
+.search {
+    width: 85%;
+}
+
+.same {
+    float: right;
+}
+
+
+div.paginate {
+    padding: 5px 0px;
+    margin: auto;
+    border: 1px solid white;
+    width: fit-content;
+    background: rgb(245, 242, 242);
+}
+
+    div.paginate input[type='button']:hover {
+        cursor: pointer;
+        background: #03A9F4;
+        color: white;
+    }
+
+    div.paginate input[type='button'] {
+        margin: 0px 2px;
+        border: none;
+        color: black;
+        background-color: transparent;
+        border-radius: 10%;
+        min-width: 1.5rem;
+        min-height: 1.5rem;
+        outline: none;
+    }
+
+        div.paginate input[type='button'].active {
+            background-color: rgb(46, 46, 146);
+            color: #fff;
+            font-weight: bold;
+        }
+
+        div.paginate input[type='button']:disabled {
+            color: grey !important;
+            cursor: not-allowed;
+        }
+
+    div.paginate input[type='number']#paginate_page_to_go {
+        max-width: 3rem;
+        text-align: center;
+        border-radius: 4px;
+        border: 1px solid rgba(128, 128, 128, 0.65);
+        padding: 3px;
+    }
+
+#containerForPagination{
+    margin-bottom:30px;
+    margin-top:30px;
+}
